@@ -13,17 +13,18 @@ public class PhoneBookTest {
         String name = "Archi";
         String number = "+79322154695";
         Map<String, String> map = new HashMap<>();
-        PhoneBook phoneBookTest = Mockito.mock(PhoneBook.class);
+        map.put("Archi", "+79322154695");
+        PhoneBook phoneBook = new PhoneBook();
 
         //Act
-        int expercted = phoneBookTest.add(name, number, map);
+        int expected = phoneBook.add(name, number, map);
         if (!map.containsKey(name)) {
             map.put(name, number);
         }
         int result = map.size();
 
         //Assert
-        Assertions.assertEquals(expercted, result);
+        Assertions.assertEquals(expected, result);
 
 
 
