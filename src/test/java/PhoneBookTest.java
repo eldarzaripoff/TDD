@@ -46,4 +46,24 @@ public class PhoneBookTest {
         //Assert
         Assertions.assertEquals(expected, result);
     }
+    @Test
+    public void findByNameTest() {
+        //Arrange
+        String name = "Sara";
+        String number = "+79123489653";
+        Map<String, String> map = new HashMap<>();
+        map.put(name, number);
+        PhoneBook phoneBook = new PhoneBook();
+        
+        //Act
+        String expected = phoneBook.findByName(name, map);
+        String result = null;
+        for (Map.Entry<String, String> entry: map.entrySet()) {
+            if(name.equals(entry.getKey())) {
+                result = entry.getValue();
+            }
+        }
+        //Assert
+        Assertions.assertEquals(expected, result);
+    }
 }

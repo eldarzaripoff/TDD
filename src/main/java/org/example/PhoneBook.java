@@ -18,4 +18,7 @@ public class PhoneBook {
         }
         return "Name not found";
     }
+    public String findByName(String name, Map<String, String> contacts) {
+        return null;
+    }
 }
