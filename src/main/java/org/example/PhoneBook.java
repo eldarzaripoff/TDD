@@ -1,7 +1,9 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class PhoneBook {
     public int add(String name, String number, Map<String, String> contacts) {
@@ -28,6 +30,6 @@ public class PhoneBook {
         return "Number not found";
     }
     public List<String> printAllNames(Map<String, String> contacts) {
-        return null;
+        return new ArrayList<>(new TreeMap<>(contacts).keySet());
     }
 }
