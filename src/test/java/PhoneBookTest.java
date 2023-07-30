@@ -2,8 +2,7 @@ import org.example.PhoneBook;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class PhoneBookTest {
     @Test
@@ -65,5 +64,24 @@ public class PhoneBookTest {
         }
         //Assert
         Assertions.assertEquals(expected, result);
+    }
+    @Test
+    public void printAllNames() {
+        //Arrange
+        String name1 = "Michael";
+        String number1 = "+9631257564";
+        String name2 = "Sara";
+        String number2 = "+79123489653";
+        Map<String, String> map = new HashMap<>();
+        map.put(name1, number1);
+        map.put(name2, number2);
+        PhoneBook phoneBook = new PhoneBook();
+
+        //Act
+        List<String> expectedSortedNames = new ArrayList<>(new TreeMap<>(map).keySet());
+        List<String> resultedSortedNames = phoneBook.printAllNames(map);
+
+        //Assert
+        Assertions.assertEquals(expectedSortedNames, resultedSortedNames);
     }
 }

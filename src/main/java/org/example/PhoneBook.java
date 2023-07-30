@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.List;
 import java.util.Map;
 
 public class PhoneBook {
@@ -25,5 +26,8 @@ public class PhoneBook {
             }
         }
         return "Number not found";
+    }
+    public List<String> printAllNames(Map<String, String> contacts) {
+        return null;
     }
 }
